@@ -203,3 +203,24 @@ dialog button:active { transform: translateY(1px); }
   .case-study *, .case-study *::before, .case-study *::after { animation:none !important; transition:none !important; }
   .case-study .text-action:active, .case-study .text-action:hover span, .case-study button:active { transform:none; }
 }
+
+/* Existing dark Workbench system extended with a landscape monitoring gallery. */
+.case-study .monitoring-workbench { padding-block:var(--space-3xl) var(--space-2xl); }
+.case-study .monitoring-tabs { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); width:100%; }
+.case-study .monitoring-tabs button { min-width:0; }
+.case-study .monitoring-panels { margin-top:var(--space-xl); }
+.case-study .monitor-panel { display:grid; gap:var(--space-lg); animation:case-fade var(--dur-short) var(--ease-out); }
+.case-study .monitor-description { display:flex; flex-direction:column; gap:var(--space-md); min-height:184px; }
+.case-study .monitor-description h3 { font-size:var(--text-lg); }
+.case-study .monitor-description p { margin:0; color:var(--color-ink-2); max-width:70ch; font-size:var(--text-base); line-height:1.8; }
+.case-study .monitor-image img { width:100%; height:auto; aspect-ratio:2504/949; object-fit:contain; }
+.case-study .monitor-figure figcaption { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:var(--space-sm); margin-top:var(--space-md); font-size:var(--text-sm); color:var(--color-ink-2); }
+.case-study .monitor-figure figcaption span { white-space:nowrap; }
+@media (min-width:40rem) {
+  .case-study .monitoring-tabs { display:flex; width:fit-content; }
+  .case-study .monitoring-tabs button { min-width:140px; }
+  .case-study .monitor-description { min-height:120px; }
+}
+@media (min-width:60rem) {
+  .case-study .monitoring-workbench { padding-top:var(--space-4xl); }
+}

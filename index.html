@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="陈鹏的 MEOS AI 项目案例。展示业务智能体与 Bot 对话组件的实际界面，包括设备选择、结果卡片与多轮追问。">
+  <meta name="description" content="陈鹏的 MEOS AI 项目案例。展示业务智能体、Bot 对话组件和运行监控的实际界面，包括设备选择、三维机房、系统关系图与照明看板。">
   <meta name="theme-color" content="#111113">
-  <title>MEOS Agent · 陈鹏的项目案例</title>
+  <title>MEOS 项目案例 · AI 与运行监控 · 陈鹏</title>
   <link rel="preload" href="fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <script src="gallery.js" defer></script>
@@ -14,7 +14,7 @@
   <a class="skip" href="#main">跳到项目展示</a>
   <header class="nav-edge wrap">
     <a class="identity" href="#main"><span class="identity-name">陈鹏</span><span class="identity-role">AI 开发工程师</span></a>
-    <a class="text-action" href="#interaction">浏览交互 <span aria-hidden="true">↘</span></a>
+    <a class="text-action" href="#monitoring">运行监控 <span aria-hidden="true">↘</span></a>
   </header>
 
   <main id="main" class="wrap">
@@ -99,6 +99,62 @@
         </section>
       </div>
     </section>
+
+    <section id="monitoring" class="monitoring-workbench" aria-labelledby="monitoring-title">
+      <div class="workbench-heading">
+        <h2 id="monitoring-title">运行监控与数字孪生</h2>
+        <p>meos-control-web · 系统关系、空间设备、三维机房与照明运行场景。</p>
+      </div>
+      <div class="case-tabs monitoring-tabs" role="tablist" aria-label="选择运行监控场景">
+        <button type="button" role="tab" id="tab-cooling" aria-controls="panel-cooling" aria-selected="true" tabindex="0" data-case="cooling">供冷系统</button>
+        <button type="button" role="tab" id="tab-floor" aria-controls="panel-floor" aria-selected="false" tabindex="-1" data-case="floor">楼层设备</button>
+        <button type="button" role="tab" id="tab-room" aria-controls="panel-room" aria-selected="false" tabindex="-1" data-case="room">三维机房</button>
+        <button type="button" role="tab" id="tab-lighting" aria-controls="panel-lighting" aria-selected="false" tabindex="-1" data-case="lighting">室内照明</button>
+      </div>
+
+      <div class="monitoring-panels">
+        <section class="monitor-panel" id="panel-cooling" role="tabpanel" aria-labelledby="tab-cooling" tabindex="0">
+          <div class="monitor-description"><h3>供冷系统关系图</h3><p>通过管线呈现冷机、水泵、阀门等设备的连接关系，结合右侧面板查看运行参数与控制入口。</p></div>
+          <figure class="monitor-figure">
+            <a class="image-link monitor-image" href="images/meos-monitor-cooling-system.png" target="_blank" rel="noopener" data-gallery="4" aria-label="放大查看：供冷系统关系图">
+              <img src="images/meos-monitor-cooling-system.png" alt="中央供冷全系统的关系视角，彩色管线连接冷机、水泵及阀门，右侧展示运行控制与参数区域。" width="2504" height="900" loading="lazy">
+            </a>
+            <figcaption>系统关系视角 <span>点击图片放大 ↗</span></figcaption>
+          </figure>
+        </section>
+
+        <section class="monitor-panel" id="panel-floor" role="tabpanel" aria-labelledby="tab-floor" tabindex="0" hidden>
+          <div class="monitor-description"><h3>楼层末端设备分布</h3><p>在楼层平面图中定位末端设备，通过楼层切换、空间筛选与设备标识查看目标区域，并衔接运行控制和异常事件入口。</p></div>
+          <figure class="monitor-figure">
+            <a class="image-link monitor-image" href="images/meos-monitor-floor-equipment.png" target="_blank" rel="noopener" data-gallery="5" aria-label="放大查看：楼层末端设备分布">
+              <img src="images/meos-monitor-floor-equipment.png" alt="商业 F7 层的末端环境页面，平面图上标有空调和新风设备，左侧可切换楼层，右侧为运行控制区域。" width="2504" height="949" loading="lazy">
+            </a>
+            <figcaption>楼层与空间视角 <span>点击图片放大 ↗</span></figcaption>
+          </figure>
+        </section>
+
+        <section class="monitor-panel" id="panel-room" role="tabpanel" aria-labelledby="tab-room" tabindex="0" hidden>
+          <div class="monitor-description"><h3>三维机房模型</h3><p>以三维模型展示设备与管线的空间布局，结合设备标签和异常标识定位对象，同时提供运行控制与异常事件面板。</p></div>
+          <figure class="monitor-figure">
+            <a class="image-link monitor-image" href="images/meos-monitor-3d-plantroom.png" target="_blank" rel="noopener" data-gallery="6" aria-label="放大查看：三维机房模型">
+              <img src="images/meos-monitor-3d-plantroom.png" alt="中央供冷系统的三维机房模型，展示冷机、水泵、彩色管线和设备异常标签。" width="2504" height="949" loading="lazy">
+            </a>
+            <figcaption>设备与管线三维视角 <span>点击图片放大 ↗</span></figcaption>
+          </figure>
+        </section>
+
+        <section class="monitor-panel" id="panel-lighting" role="tabpanel" aria-labelledby="tab-lighting" tabindex="0" hidden>
+          <div class="monitor-description"><h3>室内照明运行看板</h3><p>汇总公共照明和停车场照明的回路状态，按楼层呈现开启、本地、多开、少开及异常信息，并提供临时控制入口。</p></div>
+          <figure class="monitor-figure">
+            <a class="image-link monitor-image" href="images/meos-monitor-indoor-lighting.png" target="_blank" rel="noopener" data-gallery="7" aria-label="放大查看：室内照明运行看板">
+              <img src="images/meos-monitor-indoor-lighting.png" alt="室内照明看板展示公共照明和停车场照明的回路统计、楼层状态与异常信息，右侧为临时控制面板。" width="2504" height="949" loading="lazy">
+            </a>
+            <figcaption>照明回路统计与控制 <span>点击图片放大 ↗</span></figcaption>
+          </figure>
+        </section>
+      </div>
+    </section>
+
   </main>
 
   <footer class="project-colophon wrap">

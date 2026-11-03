@@ -1,7 +1,7 @@
 'use strict';
 
 const entries = [...document.querySelectorAll('[data-gallery]')];
-const titles = ['业务平台与 Bot 集成', '设备对象选择', '结构化查询结果', '多轮信息补全'];
+const titles = ['业务平台与 Bot 集成', '设备对象选择', '结构化查询结果', '多轮信息补全', '供冷系统关系图', '楼层末端设备分布', '三维机房模型', '室内照明运行看板'];
 const viewer = document.querySelector('#viewer');
 const image = document.querySelector('#viewer-image');
 const title = document.querySelector('#viewer-title');
@@ -63,8 +63,7 @@ viewer.addEventListener('close', () => {
 });
 
 // Each tab keeps a stable footprint; changing scenarios does not move the page.
-const caseTabs = [...document.querySelectorAll('[role="tab"][data-case]')];
-function selectCase(index, moveFocus = false) {
+function selectCase(caseTabs, index, moveFocus = false) {
   const selected = (index + caseTabs.length) % caseTabs.length;
   caseTabs.forEach((tab, i) => {
     const active = i === selected;
@@ -74,13 +73,16 @@ function selectCase(index, moveFocus = false) {
   });
   if (moveFocus) caseTabs[selected].focus({ preventScroll: true });
 }
-caseTabs.forEach((tab, index) => {
-  tab.addEventListener('click', () => selectCase(index));
-  tab.addEventListener('keydown', event => {
-    const keys = { ArrowRight: index + 1, ArrowLeft: index - 1, Home: 0, End: caseTabs.length - 1 };
-    if (!(event.key in keys)) return;
-    event.preventDefault();
-    selectCase(keys[event.key], true);
+document.querySelectorAll('[role="tablist"]').forEach(tablist => {
+  const caseTabs = [...tablist.querySelectorAll('[role="tab"][data-case]')];
+  caseTabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => selectCase(caseTabs, index));
+    tab.addEventListener('keydown', event => {
+      const keys = { ArrowRight: index + 1, ArrowLeft: index - 1, Home: 0, End: caseTabs.length - 1 };
+      if (!(event.key in keys)) return;
+      event.preventDefault();
+      selectCase(caseTabs, keys[event.key], true);
+    });
   });
 });
 viewer.addEventListener('click', event => {

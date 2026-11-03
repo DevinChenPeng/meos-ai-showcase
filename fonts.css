@@ -21,6 +21,15 @@
   font-style: normal;
   font-display: swap;
   font-weight: 100 900;
+  src: url(./fonts/noto-sans-sc-74-wght-normal.woff2) format('woff2-variations');
+  unicode-range: U+5aa0,U+5aa3-5aa4,U+5aaa,U+5aae-5aaf,U+5ab1-5ab2,U+5ab4-5ab5,U+5ab7-5aba,U+5abd-5abf,U+5ac3-5ac4,U+5ac6-5ac8,U+5aca-5acb,U+5acd,U+5acf-5ad2,U+5ad4,U+5ad8-5ada,U+5adc,U+5adf-5ae2,U+5ae4,U+5ae6,U+5ae8,U+5aea-5aed,U+5af0-5af3,U+5af5,U+5af9-5afb,U+5afd,U+5b01,U+5b05,U+5b08,U+5b0b-5b0c,U+5b11,U+5b16-5b17,U+5b1b,U+5b21-5b22,U+5b24,U+5b27-5b2e,U+5b30,U+5b32,U+5b34,U+5b36-5b38,U+5b3e-5b40,U+5b43,U+5b45,U+5b4a-5b4b,U+5b51-5b53,U+5b56,U+5b5a-5b5b,U+5b62,U+5b65,U+5b67,U+5b6a-5b6e,U+5b70-5b71,U+5b73,U+5b7a-5b7b,U+5b7f-5b80,U+5b84,U+5b8d,U+5b91,U+5b93-5b95,U+5b9f,U+5ba5-5ba6,U+5bac,U+5bae,U+5bb8,U+5bc0,U+5bc3,U+5bcb,U+5bd0-5bd1,U+5bd4-5bd8,U+5bda-5bdc,U+5be2,U+5be4-5be5,U+5be7,U+5be9,U+5beb;
+}
+
+@font-face {
+  font-family: 'Noto Sans SC Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
   src: url(./fonts/noto-sans-sc-90-wght-normal.woff2) format('woff2-variations');
   unicode-range: U+207c-2083,U+208c-208e,U+2092,U+20a6,U+20a8-20ad,U+20af,U+20b1,U+20b4-20b5,U+20b8-20ba,U+20bd,U+20db,U+20dd,U+20e0,U+20e3,U+2105,U+2109,U+2113,U+2116-2117,U+2120-2121,U+2126,U+212b,U+2133,U+2139,U+2194,U+2196-2199,U+21a0,U+21a9-21aa,U+21af,U+21b3,U+21b5,U+21ba-21bb,U+21c4,U+21ca,U+21cc,U+21d0-21d4,U+21e1,U+21e6-21e9,U+2200,U+2202,U+2205-2208,U+220f,U+2211-2212,U+2215,U+2217-2219,U+221d-2220,U+2223,U+2225,U+2227-222b,U+222e,U+2234-2237,U+223c-223d,U+2248,U+224c,U+2252,U+2256,U+2260-2261,U+2266-2267,U+226a-226b,U+226e-226f,U+2282-2283,U+2295,U+2297,U+2299,U+22a5,U+22b0-22b1,U+22b9,U+22bf,U+22c5-22c6,U+22ef,U+2304,U+2307,U+230b,U+2312-2314,U+2318,U+231a-231b,U+2323,U+239b,U+239d-239e,U+23a0,U+23e9;
 }
