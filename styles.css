@@ -1,6 +1,6 @@
 /* Hallmark · macrostructure: Workbench · genre: atmospheric · tone: dark technical · theme: Midnight adapted to Radix Slate/Cyan · nav: N9 · footer: Ft4 */
 /* Hallmark · pre-emit critique: P4 H4 E4 S5 R4 V4 */
-@import url("./tokens.css");
+@import url("./tokens.css?v=monitoring-20261103");
 :root {
   --paper: var(--color-paper);
   --surface: var(--color-paper-2);

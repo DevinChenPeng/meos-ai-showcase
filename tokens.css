@@ -1,5 +1,5 @@
 /* Radix Colors 3.0.0 dark scales, converted from sRGB to OKLCH. */
-@import url('./fonts.css');
+@import url('./fonts.css?v=monitoring-20261103');
 :root {
   --slate-1: oklch(17.85291% 0.004066 285.9807);
   --slate-2: oklch(21.31751% 0.004213 264.4789);
