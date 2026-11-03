@@ -1,0 +1,36 @@
+[
+  {
+    "date": "2026-11-03",
+    "macrostructure": "Workbench",
+    "theme": "Midnight adapted to Radix Slate/Cyan",
+    "nav": "N9",
+    "footer": "Ft4",
+    "enrichment": "original screenshots",
+    "brief": "Dark developer project case study with switchable detail views",
+    "critique": {
+      "P": 4,
+      "H": 4,
+      "E": 4,
+      "S": 5,
+      "R": 4,
+      "V": 4
+    },
+    "validation": {
+      "responsive_widths": [
+        320,
+        375,
+        414,
+        768,
+        1280
+      ],
+      "contrast_ratios": {
+        "slate-12/slate-1": 16.25,
+        "slate-11/slate-1": 9.06,
+        "slate-11/slate-3": 7.64,
+        "cyan-11/slate-3": 8.4,
+        "slate-9/slate-3": 3.1
+      },
+      "original_images_unchanged": true
+    }
+  }
+]

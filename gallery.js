@@ -7,18 +7,34 @@ const image = document.querySelector('#viewer-image');
 const title = document.querySelector('#viewer-title');
 const count = document.querySelector('#viewer-count');
 const original = document.querySelector('#original-image');
+const imageStatus = document.querySelector('#image-status');
+const retryImage = document.querySelector('#retry-image');
 let current = 0;
 let opener = null;
 
 function display(index) {
   current = (index + entries.length) % entries.length;
   const entry = entries[current];
+  imageStatus.textContent = '正在加载原图…';
+  retryImage.hidden = true;
+  image.setAttribute('aria-busy', 'true');
   image.src = entry.href;
   image.alt = entry.querySelector('img').alt;
   title.textContent = titles[current];
   count.textContent = (current + 1) + ' / ' + entries.length;
   original.href = entry.href;
 }
+
+image.addEventListener('load', () => {
+  imageStatus.textContent = '';
+  image.setAttribute('aria-busy', 'false');
+});
+image.addEventListener('error', () => {
+  imageStatus.textContent = '图片暂时无法加载，请重试或查看原图。';
+  image.setAttribute('aria-busy', 'false');
+  retryImage.hidden = false;
+});
+retryImage.addEventListener('click', () => display(current));
 
 entries.forEach((entry, index) => {
   entry.addEventListener('click', event => {
@@ -27,6 +43,7 @@ entries.forEach((entry, index) => {
     opener = entry;
     display(index);
     viewer.showModal();
+    original.focus({ preventScroll: true });
     document.body.classList.add('viewer-open');
   });
 });
@@ -41,7 +58,30 @@ viewer.addEventListener('keydown', event => {
 });
 viewer.addEventListener('close', () => {
   document.body.classList.remove('viewer-open');
-  opener?.focus();
+  // A hidden case panel cannot receive focus after cycling the full gallery.
+  if (opener?.getClientRects().length) opener.focus({ preventScroll: true });
+});
+
+// Each tab keeps a stable footprint; changing scenarios does not move the page.
+const caseTabs = [...document.querySelectorAll('[role="tab"][data-case]')];
+function selectCase(index, moveFocus = false) {
+  const selected = (index + caseTabs.length) % caseTabs.length;
+  caseTabs.forEach((tab, i) => {
+    const active = i === selected;
+    tab.setAttribute('aria-selected', String(active));
+    tab.tabIndex = active ? 0 : -1;
+    document.getElementById(tab.getAttribute('aria-controls')).hidden = !active;
+  });
+  if (moveFocus) caseTabs[selected].focus({ preventScroll: true });
+}
+caseTabs.forEach((tab, index) => {
+  tab.addEventListener('click', () => selectCase(index));
+  tab.addEventListener('keydown', event => {
+    const keys = { ArrowRight: index + 1, ArrowLeft: index - 1, Home: 0, End: caseTabs.length - 1 };
+    if (!(event.key in keys)) return;
+    event.preventDefault();
+    selectCase(keys[event.key], true);
+  });
 });
 viewer.addEventListener('click', event => {
   if (event.target !== viewer) return;

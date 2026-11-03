@@ -1,0 +1,10 @@
+{
+  "date": "2026-11-03",
+  "base_commit": "b6c9498b54b95675423a0df41c2f5a8d9875c14f",
+  "framework": "buildless HTML/CSS/JS",
+  "original_fonts": "system UI stack",
+  "original_palette": "light blue-grey",
+  "original_motion": "minimal",
+  "scope": "single-page visual redesign",
+  "user_preference": "dark technical developer portfolio"
+}

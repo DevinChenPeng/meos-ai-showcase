@@ -1,0 +1,20 @@
+[
+  {
+    "package": "@fontsource-variable/space-grotesk",
+    "version": "5.3.0",
+    "tarball": "https://registry.npmjs.org/@fontsource-variable/space-grotesk/-/space-grotesk-5.3.0.tgz",
+    "sha1": "f35f8915850afbefe92b0fe15b1db49928e55186"
+  },
+  {
+    "package": "@fontsource-variable/noto-sans-sc",
+    "version": "5.3.1",
+    "tarball": "https://registry.npmjs.org/@fontsource-variable/noto-sans-sc/-/noto-sans-sc-5.3.1.tgz",
+    "sha1": "aab760688d1ae81057e19fcead2b99ff9677d605"
+  },
+  {
+    "package": "@radix-ui/colors",
+    "version": "3.0.0",
+    "tarball": "https://registry.npmjs.org/@radix-ui/colors/-/colors-3.0.0.tgz",
+    "sha1": "e8a591a303c44e503bd1212cacf40a09511165e0"
+  }
+]
