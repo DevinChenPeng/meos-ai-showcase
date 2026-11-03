@@ -1,0 +1,98 @@
+:root {
+  --paper: #f7f9fc;
+  --surface: #ffffff;
+  --ink: #17253b;
+  --muted: #53657c;
+  --line: #d9e2ee;
+  --accent: #1759ca;
+  --tint: #eaf1ff;
+  --backdrop: rgb(13 24 41 / 82%);
+  --shadow: 0 16px 48px rgb(25 52 88 / 6%);
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 28px; overflow-x: clip; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font); line-height: 1.7; overflow-x: clip; }
+body.viewer-open { overflow: hidden; }
+a { color: var(--accent); text-underline-offset: 4px; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { font: inherit; cursor: pointer; }
+button:focus-visible, a:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
+.wrap { width: min(1200px, calc(100% - 64px)); margin-inline: auto; }
+.skip { position: absolute; top: -70px; left: 20px; padding: 10px 16px; background: var(--surface); z-index: 5; }
+.skip:focus { top: 10px; }
+.site-header { padding-block: 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; border-bottom: 1px solid var(--line); }
+.wordmark { font-weight: 700; color: var(--ink); text-decoration: none; white-space: nowrap; }
+.wordmark span { font-weight: 400; margin-left: 16px; font-size: 13px; color: var(--muted); }
+nav { display: flex; gap: 28px; }
+nav a, .site-footer a { white-space: nowrap; font-size: 14px; text-decoration: none; }
+nav a { color: var(--muted); }
+nav a:hover, .site-footer a:hover { text-decoration: underline; }
+.intro { max-width: 800px; padding: 64px 0 54px; }
+.eyebrow { color: var(--accent); font-size: 12px; letter-spacing: .13em; font-weight: 700; margin: 0 0 14px; }
+h1, h2, h3 { line-height: 1.4; margin: 0; letter-spacing: -.025em; overflow-wrap: anywhere; }
+h1 { font-size: clamp(30px, 4vw, 48px); font-weight: 750; }
+.lead { font-size: clamp(18px, 2vw, 22px); margin: 16px 0 12px; }
+.intro-detail { color: var(--muted); font-size: 15px; max-width: 680px; margin: 0; }
+.intro-detail strong { font-weight: 500; color: var(--ink); overflow-wrap: anywhere; }
+.tech { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.tech span { font-size: 12px; padding: 3px 10px; color: var(--muted); background: var(--surface); border: 1px solid var(--line); border-radius: 4px; }
+.section-heading { display: flex; gap: 24px; align-items: end; justify-content: space-between; margin-bottom: 22px; }
+h2 { font-size: 24px; font-weight: 650; }
+.section-heading p { margin: 8px 0 0; color: var(--muted); font-size: 14px; }
+.hint { color: var(--muted); font-size: 12px; white-space: nowrap; }
+figure { margin: 0; }
+.image-link { display: block; position: relative; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--surface); cursor: zoom-in; box-shadow: var(--shadow); }
+.image-link img { width: 100%; height: auto; display: block; }
+.image-link:hover { border-color: var(--accent); }
+.zoom-tag { position: absolute; bottom: 12px; right: 12px; background: var(--surface); border: 1px solid var(--line); border-radius: 5px; color: var(--accent); padding: 5px 9px; font-size: 12px; }
+figcaption { font-size: 13px; color: var(--muted); margin-top: 12px; }
+.interactions { padding-top: 60px; padding-bottom: 64px; }
+.gallery-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.example { min-width: 0; }
+.detail-image img { aspect-ratio: 808 / 940; object-fit: contain; }
+.example h3 { font-size: 19px; margin-top: 20px; }
+.example p { font-size: 14px; color: var(--muted); margin: 8px 0 0; }
+.site-footer { border-top: 1px solid var(--line); padding-block: 25px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.site-footer p { color: var(--muted); font-size: 12px; margin: 0; }
+dialog { width: min(1380px, calc(100% - 40px)); max-width: none; max-height: calc(100dvh - 32px); border: 1px solid var(--line); border-radius: 12px; background: var(--surface); color: var(--ink); padding: 0; }
+dialog::backdrop { background: var(--backdrop); }
+.viewer-shell { padding: 20px 24px 12px; }
+.viewer-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: 16px; }
+.viewer-header h2 { font-size: 20px; }
+.viewer-count { color: var(--muted); font-size: 12px; margin: 0 0 3px; }
+dialog button { color: var(--ink); border: 1px solid var(--line); border-radius: 6px; background: var(--surface); padding: 8px 12px; white-space: nowrap; }
+dialog button:hover { background: var(--tint); border-color: var(--accent); }
+dialog button:active { transform: translateY(1px); }
+.viewer-stage { display: flex; align-items: center; justify-content: center; min-height: 100px; }
+.viewer-stage img { display: block; max-width: 100%; max-height: calc(100dvh - 240px); width: auto; height: auto; object-fit: contain; }
+.viewer-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 18px; font-size: 13px; }
+.viewer-footer a { white-space: nowrap; }
+.viewer-help { font-size: 11px; color: var(--muted); text-align: center; margin: 12px 0 0; }
+@media (max-width: 850px) {
+  .gallery-grid { grid-template-columns: minmax(0, 1fr); gap: 40px; max-width: 620px; margin-inline: auto; }
+  .detail-image img { max-height: 540px; }
+  .intro { padding-top: 42px; }
+}
+@media (max-width: 560px) {
+  .wrap { width: calc(100% - 32px); }
+  .wordmark span { display: none; }
+  .site-header { padding-block: 18px; }
+  nav { gap: 18px; }
+  nav a { font-size: 12px; }
+  .intro { padding-block: 36px; }
+  .intro-detail { font-size: 14px; }
+  .section-heading { display: block; }
+  .hint { display: block; margin-top: 10px; }
+  h2 { font-size: 21px; }
+  .interactions { padding-block: 40px; }
+  .site-footer { align-items: start; flex-wrap: wrap; gap: 10px; }
+  .site-footer p:nth-child(2) { order: 3; width: 100%; }
+  dialog { width: calc(100% - 16px); }
+  .viewer-shell { padding: 14px 12px 12px; }
+  .viewer-header h2 { font-size: 17px; }
+  .viewer-footer { gap: 6px; }
+  dialog button { font-size: 12px; padding: 8px; }
+  .viewer-help { font-size: 10px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="陈鹏的 MEOS AI 项目展示：Agent 服务端与 Bot 对话组件，涵盖业务平台集成、设备选择、结果卡片及多轮信息补全。">
+  <meta name="theme-color" content="#f7f9fc">
+  <title>MEOS AI 项目展示 · 陈鹏</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="gallery.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">跳到项目展示</a>
+  <header class="site-header wrap">
+    <a class="wordmark" href="#main">陈鹏<span>AI 开发工程师</span></a>
+    <nav aria-label="页面导航"><a href="#workspace">平台集成</a><a href="#interaction">交互细节</a></nav>
+  </header>
+  <main id="main" class="wrap">
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">MEOS AGENT / BOT</p>
+      <h1 id="page-title">MEOS AI 项目展示</h1>
+      <p class="lead">从自然语言需求，到可操作的业务结果。</p>
+      <p class="intro-detail">独立负责 <strong>meos-agent-server</strong> 与 <strong>meos-bot-web</strong>，将业务查询、多轮追问和结构化卡片接入实际业务平台。</p>
+      <div class="tech" aria-label="项目技术栈"><span>Python</span><span>Vue 3</span><span>TypeScript</span><span>MCP</span><span>WebSocket</span></div>
+    </section>
+
+    <section id="workspace" class="workspace" aria-labelledby="workspace-title">
+      <div class="section-heading"><div><h2 id="workspace-title">业务平台与 Bot 集成</h2><p>在当前项目上下文中查询设备，并通过结果卡片进入业务详情。</p></div><span class="hint">点击图片放大</span></div>
+      <figure class="overview">
+        <a class="image-link" href="images/meos-ai-workspace.png" target="_blank" rel="noopener" data-gallery="0" aria-label="放大查看：业务平台与 Bot 集成">
+          <img src="images/meos-ai-workspace.png" alt="MEOS 业务平台左侧为导航和报告区域，右侧 Bot 显示设备台账查询结果。" width="2504" height="949" fetchpriority="high">
+          <span class="zoom-tag" aria-hidden="true">放大查看 ↗</span>
+        </a>
+        <figcaption>将对话助手嵌入业务平台侧栏，让自然语言交互与业务页面协同工作。</figcaption>
+      </figure>
+    </section>
+
+    <section id="interaction" class="interactions" aria-labelledby="interaction-title">
+      <div class="section-heading"><div><h2 id="interaction-title">对话中的业务交互</h2><p>选择对象、查看结果、补全信息，让每一步都清楚可见。</p></div></div>
+      <div class="gallery-grid">
+        <article class="example">
+          <a class="image-link detail-image" href="images/meos-bot-device-selection.png" target="_blank" rel="noopener" data-gallery="1" aria-label="放大查看：设备对象选择">
+            <img src="images/meos-bot-device-selection.png" alt="Bot 展示设备选择卡，用户可以从多个候选设备中勾选目标对象。" width="794" height="924" loading="lazy">
+            <span class="zoom-tag" aria-hidden="true">放大查看 ↗</span>
+          </a>
+          <h3>设备对象选择</h3><p>匹配到多个设备时，通过结构化选择卡展示候选对象，支持多选，帮助用户明确目标。</p>
+        </article>
+        <article class="example">
+          <a class="image-link detail-image" href="images/meos-bot-device-results.png" target="_blank" rel="noopener" data-gallery="2" aria-label="放大查看：结构化查询结果">
+            <img src="images/meos-bot-device-results.png" alt="Bot 将多个设备台账结果显示为列表卡片，每项提供打开详情的操作。" width="796" height="893" loading="lazy">
+            <span class="zoom-tag" aria-hidden="true">放大查看 ↗</span>
+          </a>
+          <h3>结构化查询结果</h3><p>将查询结果组织为可操作的卡片列表，支持逐项打开台账，并通过后续对话继续查看其余结果。</p>
+        </article>
+        <article class="example">
+          <a class="image-link detail-image" href="images/meos-agent-account-clarification.png" target="_blank" rel="noopener" data-gallery="3" aria-label="放大查看：多轮信息补全">
+            <img src="images/meos-agent-account-clarification.png" alt="创建账号对话中，Agent 先询问人员必要信息，再追问是否配置组织和岗位；截图中的个人信息已遮挡。" width="808" height="909" loading="lazy">
+            <span class="zoom-tag" aria-hidden="true">放大查看 ↗</span>
+          </a>
+          <h3>多轮信息补全</h3><p>在创建账号场景中先收集必要信息，再根据上下文追问组织和岗位配置，逐步明确用户需求。</p>
+        </article>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap site-footer"><p>陈鹏 · AI 应用开发</p><p>截图为项目实际界面，部分信息已遮挡。</p><a href="#main">返回顶部 ↑</a></footer>
+
+  <dialog id="viewer" aria-labelledby="viewer-title">
+    <div class="viewer-shell">
+      <div class="viewer-header"><div><p id="viewer-count" class="viewer-count"></p><h2 id="viewer-title"></h2></div><button type="button" id="close-viewer" aria-label="关闭图片预览">关闭 ×</button></div>
+      <div class="viewer-stage"><img id="viewer-image" alt=""></div>
+      <div class="viewer-footer"><button type="button" id="previous-image">← 上一张</button><a id="original-image" href="images/meos-ai-workspace.png" target="_blank" rel="noopener">查看原图 ↗</a><button type="button" id="next-image">下一张 →</button></div>
+      <p class="viewer-help">可用键盘左右键切换，Esc 关闭。</p>
+    </div>
+  </dialog>
+</body>
+</html>
